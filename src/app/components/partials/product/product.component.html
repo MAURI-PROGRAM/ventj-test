@@ -1,0 +1,93 @@
+<div class="card shadow p-3 bg-white rounded" style="margin-bottom: 8px; ">
+  <ion-grid style="margin: 0px;">
+    <ion-row >
+      <ion-col>
+        <div class="float-right">
+          <ion-chip slot="end" color="primary" [routerLink]="['/edit-product',product.id]" >
+            <ion-icon name="create-outline"></ion-icon>
+            <ion-label>Editar</ion-label>
+          </ion-chip>
+          <ion-chip slot="end" color="danger" (click)="remove(product.id)">
+            <ion-icon name="close-outline"></ion-icon>
+            <ion-label>Eliminar</ion-label>
+          </ion-chip>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="auto">
+        <div class="card shadow rounded" style="width: 200px;">
+            <!--img *ngIf="product.photos" [src]="product.photos[0]?.path + '/' + product?.photos[0].name" alt=""-->
+            <img *ngIf="product.photos" [src]="product?.photos[0].name" alt="">
+        </div>
+        
+      </ion-col>
+      <ion-col >
+        <h5>{{ product.information.title }}</h5>
+        <p>{{ product.information.description }}</p>
+          <ion-row>
+            <ion-col size="auto">
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="duplicate-outline"></ion-icon>
+                <ion-text>Categoria</ion-text>
+                <ion-chip *ngFor="let category of product.categories" color="primary"><ion-label>{{ category.name }}</ion-label></ion-chip>
+              </div>
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="pricetags-outline"></ion-icon>
+                <ion-text>Etiquetas</ion-text>
+              <ion-badge style="margin-right: 8px;" *ngFor="let tag of product.tags" color="primary">{{ tag.name }}</ion-badge>
+              </div>
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="cash-outline"></ion-icon>
+                <ion-text>Precio</ion-text>
+                <ion-text id="price-style"> {{ product.price }} €</ion-text>
+              </div>
+            </ion-col>
+            <ion-col size="auto">
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="gift-outline"></ion-icon>
+                <ion-text>Condicion</ion-text>
+                <ion-chip color="primary">
+                  <ion-label>{{ product.condition.title }}</ion-label>
+                </ion-chip>
+              </div>
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="color-palette-outline"></ion-icon>
+                <ion-text>Color</ion-text>
+                <div class="parent-circle">
+                  <div *ngFor="let color of product.color" class="circle" [ngStyle]="{ 'background-color': color.hexcode } "></div>
+                </div>
+              </div>
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="battery-full-outline"></ion-icon>
+                <ion-text>Estado de venta</ion-text>
+                <ion-badge color="success">{{ product.saleStatus.name }}</ion-badge>
+              </div>
+            </ion-col>
+            <ion-col size="auto">
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="send-outline"></ion-icon>
+                <ion-text>Medio de contacto</ion-text>
+                <ion-chip *ngFor="let method of product.availabledContactMethods" color="primary">
+                  <div class="contact-media">{{ method.type }} &nbsp;</div>{{ method.value }}
+                </ion-chip>
+              </div>
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="walk-outline"></ion-icon>
+                <ion-text>Preferencia de entrega</ion-text>
+                <ion-chip color="primary">
+                  <ion-label>Recogida</ion-label>
+                </ion-chip>
+              </div>
+              <div class="detail-line-product">
+                <ion-icon color="primary" style="margin-right: 8px;" name="location-outline"></ion-icon>
+                <ion-text>Dirección</ion-text>
+                <ion-text>{{ product.location.address }}</ion-text>
+              </div>
+            </ion-col>
+          </ion-row>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

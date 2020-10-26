@@ -1,0 +1,30 @@
+
+.callbackStyles  {
+    max-width: 550px;
+    padding: 90px 20px 30px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  };
+
+.imageStyles {
+    width: 100%;
+    margin-bottom: "30px";
+};
+
+.loadingStyles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  };
+
+.titleStyles  {
+    margin: 0 10px
+  };
+
+  @media(max-width: 450px) {
+    .titleStyles  {
+      margin: 0 10px;
+      font-size: 30px;
+    };
+  }

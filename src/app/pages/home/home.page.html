@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ve-logo></ve-logo>  
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-slides pager="true" [options]="slideOpts" class="carrusel">
+    <ion-slide>
+      <img src="../../../assets/images/j4hs0luk.png" alt="...">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/images/doiqewz4.png" alt="...">
+    </ion-slide>
+  </ion-slides>
+
+  
+
+
+  <div class="ps-section__header">
+    <h3>{{ products.length }} Productos encontrados</h3>
+  </div>
+
+  <div class="list-product-section">
+        <app-product-item *ngFor="let product of products" [product]="product" [routerLink]="['/description-product',product.id]"></app-product-item>
+  </div>
+
+
+  <footer-default></footer-default>
+  
+</ion-content>

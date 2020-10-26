@@ -1,0 +1,38 @@
+
+<!--label class="image-upload-container btn btn-bwm">
+  <span>Select Image</span>
+  <input #imageInput
+         type="file"
+         accept="image/*"
+         (change)="processFile(imageInput)">
+</label-->
+
+
+
+<div class="my-picture">
+  <img [src]="imgURL" width="200" height="200" *ngIf="imgURL">
+  <div class="overlay" *ngIf="imgURL">
+    <ion-icon (click)="remove()" name="close-circle-outline" *ngIf="imgURL"></ion-icon>
+  </div>
+</div>
+<div id="back-photo" class="card" *ngIf="!preLoading">
+  <h3>200x200</h3>
+</div>
+
+
+<div class="input-group" [formGroup]="picturesForm">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Cargar</span>
+  </div>
+  <div class="custom-file">
+    <input #imageInput
+           formControlName="photo1"
+           type="file" 
+           class="custom-file-input" 
+           id="inputGroupFile01"
+           aria-describedby="inputGroupFileAddon01"
+           accept="image/*"
+           (change)="processFile(imageInput)">
+    <label class="custom-file-label" for="inputGroupFile01">Agregar foto</label>
+  </div>
+</div>

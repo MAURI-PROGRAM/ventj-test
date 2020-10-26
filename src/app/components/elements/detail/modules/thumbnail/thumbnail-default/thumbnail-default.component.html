@@ -1,0 +1,32 @@
+  <figure>
+    <div class="ps-wrapper">
+      <div class="ps-product__gallery ps-carousel inside">
+        
+        
+        <ngx-slick-carousel #slickModal1="slick-carousel" [config]="gallerySetting"
+          class="carousel feedback">
+          <div ngxSlickItem *ngFor="let slide of photos" >
+            <img *ngIf="photos"
+              [src]="photos[0]?.name " alt=""
+              width="100%"> 
+          </div>
+        </ngx-slick-carousel>
+        
+        
+      </div>
+      
+
+
+    </div>
+  </figure>
+  
+  <ngx-slick-carousel #slickModal2="slick-carousel" [config]="variantSetting"
+    class="ps-product__variants  carousel thumbs">
+
+    <div ngxSlickItem *ngFor="let slide of photos" class="item">
+      <img *ngIf="photos"
+      [src]="photos[0]?.name " alt=""
+        width="100%">
+
+    </div>
+  </ngx-slick-carousel>

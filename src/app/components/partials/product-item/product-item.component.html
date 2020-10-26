@@ -1,0 +1,8 @@
+<div class="ps-product">
+  <!-- img  *ngIf="product.photos" [src]="product.photos[0]?.path + '/' + product.photos[0]?.name"-->
+  <img  *ngIf="product.photos" [src]="product.photos[0]?.name" >
+  <a class="shop-group"> {{ product.information.title }}</a>
+  <div class="divider"></div>
+  <a class="title"> {{ product.information.description }}</a>
+  <a class="price"> {{ product.price }} €</a>
+</div>

@@ -1,0 +1,56 @@
+$border-color-circle: #000;
+$background-color-circle: blue;
+
+ion-chip {
+    ion-label {
+        font-size: 12px; 
+    }
+}
+
+
+.detail-line-product {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 8px;
+
+    ion-text {
+        margin-right: 8px;
+    }
+    
+}
+
+@media (max-width: 750px) {
+
+    ion-chip {
+        font-size: 10px;
+    }
+
+    .contact-media {
+        display: none;
+    }
+}
+
+#price-style {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.parent-circle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    //background-color: $background-color-circle;
+    margin-right: 8px;
+    border: 2px solid $border-color-circle;
+}
+
+.my-custom-class .alert-wrapper {
+    background: #e5e5e5;
+  }

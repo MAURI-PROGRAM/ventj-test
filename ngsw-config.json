@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "ventajon.sm",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+    "name": "api",
+    "urls": [
+    "https://firebasestorage.googleapis.com/v0/b/ventajon-segunda-mano-9b134.appspot.com/**"
+    ],
+      "cacheConfig": {
+      "maxSize": 3,
+      "maxAge": "1d",
+      "strategy": "freshness",
+      "timeout": "4s"
+      }
+    }
+  ]
+}

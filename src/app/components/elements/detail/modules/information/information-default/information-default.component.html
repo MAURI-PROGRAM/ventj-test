@@ -1,0 +1,121 @@
+<div class="ps-product__info">
+  <h1>{{product.information.title}}</h1>
+  <div class="ps-product__meta">
+    <p>
+      Marca:
+      <a class="ml-2 text-capitalize">
+        Nombre de la marca
+      </a>
+    </p>
+    <div class="ps-product__rating">
+      <span class="ps-rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </span>
+      <span>(1 review)</span>
+    </div>
+  </div>
+  <div *ngIf="!product.saleStatus.selected ; else elseBlock">
+    <h4 class="ps-product__price sale">
+      <del class="mr-2">
+        {{currency ? currency : '$' }}
+        {{product.price}}
+      </del>
+      {{currency ? currency : '$' }}
+      {{product.price}}
+    </h4>
+  </div>
+  <ng-template #elseBlock>
+    <h4 class="ps-product__price">
+      {{currency ? currency : '$' }}
+      {{product.price}}
+    </h4>
+  </ng-template>
+
+  <div class="ps-product__desc">
+    <p>
+      Vendido por:
+      <a>
+        <strong> Nombre del propietario</strong>
+      </a>
+
+    </p>
+    <ul class="ps-list--dot">
+      <li>{{product.information.description}}</li>
+    </ul>
+  </div>
+  <div class="ps-product__shopping">
+    <figure>
+      <figcaption>Cantidad</figcaption>
+      <div class="form-group--number">
+        <button class="up" (click)="handleIncreaseItemQty()">
+          <i class="fa fa-plus"></i>
+        </button>
+        <button class="down" (click)="handleDecreaseItemQty()">
+          <i class="fa fa-minus"></i>
+        </button>
+        <input class="form-control" type="text" placeholder={{quantity}} disabled />
+      </div>
+    </figure>
+    <a class="ps-btn ps-btn--black" href="#">
+      Añadir
+    </a>
+    <a class="ps-btn" href="#">
+      Comprar
+    </a>
+    <div class="ps-product__actions">
+      <a href="#">
+        <i class="icon-heart"></i>
+      </a>
+      <a href="#">
+        <i class="icon-chart-bars"></i>
+      </a>
+    </div>
+  </div>
+  <div class="ps-product__specification">
+    <a routerLink="/page/blank">
+      <a class="report">Reportar Abuso</a>
+    </a>
+    
+    <p class="categories">
+      <strong> Categorias:</strong>
+      <a *ngFor="let categorie of product.categories" routerLink="/shop">
+        <a>Consumer Electronics</a>
+      </a>
+    </p>
+    <p class="tags">
+      <strong> Etiquetas</strong>
+      <a  *ngFor="let tag of product.tags" routerLink="/shop">
+        <a>{{tag.name}}</a>
+      </a>
+    </p>
+  </div>
+  <div class="ps-product__sharing">
+    <a class="facebook" href="#">
+      <i class="fa fa-facebook"></i>
+    </a>
+    <a class="twitter" href="#">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <a class="google" href="#">
+      <i class="fa fa-google-plus"></i>
+    </a>
+    <a class="linkedin" href="#">
+      <i class="fa fa-linkedin"></i>
+    </a>
+    <a class="instagram" href="#">
+      <i class="fa fa-instagram"></i>
+    </a>
+  </div>
+  <div class="ps-product__actions-mobile">
+    <a class="ps-btn ps-btn--black" href="#">
+      Añadir
+    </a>
+    <a class="ps-btn" href="#">
+      Comprar
+    </a>
+  </div>
+</div>

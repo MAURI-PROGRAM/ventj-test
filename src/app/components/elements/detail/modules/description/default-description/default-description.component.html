@@ -1,0 +1,30 @@
+<div class="ps-product__content ps-tab-root">
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="description">
+      <ion-label>Descripción</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="specification">
+      <ion-label>Especificación</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="contactos">
+      <ion-label>Contactos</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  <div [ngSwitch]="segmentInfo">
+    <div *ngSwitchCase="'description'">
+      <app-partial-description  [title]="product.information.title" [description]="product.information.description"></app-partial-description>
+    </div>
+    <div *ngSwitchCase="'specification'">
+      <app-partial-specification [colors]="product.color" 
+                                [preferencesdelivery]="product.deliveryPreference"
+                                [status]="product.status"
+                                [condition]="product.condition"
+      ></app-partial-specification>
+    </div>
+    <div *ngSwitchCase="'contactos'">
+      <app-partial-vendor [contactos]="product.availabledContactMethods"></app-partial-vendor>
+    </div>
+  </div>
+</div>

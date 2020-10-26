@@ -1,0 +1,4 @@
+<img src="../../../assets/logo-ventajon-header.png" class="ve-logo" alt="">
+
+<ion-button *ngIf="!isAutentication"  color="danger" (click)="login()">Login</ion-button>
+<ion-button  *ngIf="isAutentication" color="danger" (click)="logout()">Logout</ion-button>

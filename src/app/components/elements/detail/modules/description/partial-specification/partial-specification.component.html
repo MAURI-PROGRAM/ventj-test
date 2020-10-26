@@ -1,0 +1,25 @@
+<div class="table-responsive">
+  <table class="table table-bordered ps-table ps-table--specification">
+    <tbody>
+      <tr>
+        <td>Color</td>
+        <td class=" parent" >
+          <div *ngFor="let color of colors; let i = index"  > <span *ngIf="i!=0">,</span> {{color.code}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Preference delivery</td>
+        <td>{{preferencesdelivery.code}}</td>
+      </tr>
+      <tr>
+        <td>Condition</td>
+        <td>{{condition.code}}</td>
+      </tr>
+      <tr>
+        <td>StatusProduct</td>
+        <td>{{status.code}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

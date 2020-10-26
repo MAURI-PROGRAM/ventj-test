@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/tabs','home']">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ve-logo></ve-logo>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div *ngIf="product" class="layout--product">
+      <div class="ps-page--product ">
+        <div class="ps-container">
+          <div class="ps-page__container">
+            <div class="ps-page__left">
+              <app-product-detail-fullwidth [product]="product"></app-product-detail-fullwidth>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <footer-default></footer-default>
+</ion-content>

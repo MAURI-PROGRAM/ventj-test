@@ -2,7 +2,6 @@ import 'zone.js/dist/zone-node';
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
-import * as https from 'https';
 import { join } from 'path';
 
 import { AppServerModule } from './src/main.server';
@@ -39,10 +38,10 @@ export function app() {
 }
 
 function run() {
-  const port = process.env.PORT || 8100;
+  const port = process.env.PORT || 4000;
 
   // Start up the Node server
-  const server = https.createServer({}, app())  ;
+  const server = app();
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
